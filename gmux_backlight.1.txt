@@ -1,0 +1,48 @@
+GMUX_BACKLIGHT(1)
+=================
+:doctype: manpage
+
+
+NAME
+----
+gmux_backlight - Modify brightness of displays attached to a gmux.
+
+
+SYNOPSIS
+--------
+*gmux_backlight* +50
+
+*gmux_backlight* -50
+
+*gmux_backlight* 50
+
+DESCRIPTION
+-----------
+
+gmux_backlight reads from and writes
+`/sys/class/backlight/gmux_backlight/brightness` to control the brightness of
+your gmux-attached display.
+
+This is useful on laptops with two graphics cards where the internal display
+is attached to a hardware multiplexer (gmux).
+
+The paramter is an integer, optionally prefixed with `+` or `-`.
+
+* `+` increases the brightness value by the given integer.
+
+* `-` decreases the brightness value by the given integer.
+
+* Without a prefix, the brightness value is set to the given value.
+
+NOTES
+-----
+The software is installed with setuid and setgid enabled since only root can
+modify the sysfs entry but usually changing display brightness is an action
+taken by a non-privileged user.
+
+COPYRIGHT
+--------
+
+gmux_backlight is licensed under the 3-clause BSD license:
+
+include::LICENSE[]
