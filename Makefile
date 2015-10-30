@@ -1,6 +1,8 @@
 
 default: build
 
+docs: gmux_backlight.1
+
 build: gmux_backlight
 
 gmux_backlight: gmux_backlight.c
